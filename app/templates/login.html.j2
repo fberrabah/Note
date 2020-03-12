@@ -1,0 +1,26 @@
+{% extends "base.html.j2" %}
+{% block body %}
+  <main class="w100 bg-dark text-white pt-5" style="height: 100vh;">
+    <h1 class="text-center text-muted">Accéder à votre carnet de note</h1>
+    <div class="d-flex justify-content-center mt-5">
+      <form method="post" action="" class="w-25">
+        {% include "flash_messages.html.j2"%}
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+          {{ form.pseudo.label }} (compte exemple : test)
+          {{ form.pseudo(class_="form-control") }}
+        </div>
+        <div class="form-group">
+          {{ form.password.label }} (compte exemple : Test1234)
+          {{ form.password(class_="form-control") }}
+        </div>
+        <div class="text-center">
+          {{ form.submit(class_="btn btn-success") }}
+          <div class="my-5">
+            <a class="mb-5 text-white" href="{{ url_for('register')}}">Je n'ai pas encore de compte</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+{% endblock %}

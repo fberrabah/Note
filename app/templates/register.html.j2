@@ -1,0 +1,51 @@
+{% extends "base.html.j2" %}
+{% block body %}
+  <main class="w100 bg-dark text-white pt-5">
+    <h1 class="text-center text-muted">Vous inscrire</h1>
+    <div class="d-flex justify-content-center mt-5">
+      <form method="post" action="" class="w-25">
+        {% include "flash_messages.html.j2" %}
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+          {{ form.last_name.label }}
+          {{ form.last_name(class_="form-control") }}
+        </div>
+        <div class="form-group">
+          {{ form.first_name.label }}
+          {{ form.first_name(class_="form-control") }}
+        </div>
+        <div class="form-group">
+          {{ form.pseudo.label }}
+          {{ form.pseudo(class_="form-control") }}
+          {% for error in form.pseudo.errors %}
+            <span class="text-danger">{{ error }}</span>
+          {% endfor %}
+        </div>
+        <div class="form-group">
+          {{ form.description.label }}
+          {{ form.description(class_="form-control") }}
+        </div>
+        <div class="form-group">
+          {{ form.password.label }}
+          {{ form.password(class_="form-control") }}
+          {% for error in form.password.errors %}
+            <span class="text-danger">{{ error }}</span>
+          {% endfor %}
+        </div>
+        <div class="form-group">
+          {{ form.password_confirm.label }}
+          {{ form.password_confirm(class_="form-control") }}
+          {% for error in form.password_confirm.errors %}
+            <span class="text-danger">{{ error }}</span>
+          {% endfor %}
+        </div>
+        <div class="text-center">
+          {{ form.submit(class_="btn btn-success") }}
+          <div class="my-5">
+            <a class="mb-5 text-white" href="{{ url_for('login')}}">J'ai déjà un compte</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+{% endblock %}

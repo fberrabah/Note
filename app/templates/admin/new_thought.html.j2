@@ -1,0 +1,16 @@
+{% extends "layout.html.j2" %}
+{% block main %}
+  <h2>Ajouter une pensée au carnet :</h2>
+  <div class="row">
+    <form action="" method="post" class="col-12 col-sm-6 mx-auto">
+      {{ form.hidden_tag() }}
+      <div class="form-group">
+        {{ form.content.label }}
+        {{ form.content(class_="form-control") }}
+      </div>
+      <div class="form-group text-center">
+        {{ form.submit(class_="btn btn-secondary text-white") }}
+      </div>
+    </form>
+  </div>
+{% endblock %}

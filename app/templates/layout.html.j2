@@ -1,0 +1,16 @@
+{% extends "base.html.j2" %}
+<!-- A simple layout included in base html body and declaring a main block to hold the main content -->
+<!-- Une disposition simple incluse dans le corps html de base et déclarant un bloc principal pour contenir le contenu principal -->
+{% block body %}
+  <header class="jumbotron jumbotron-fluid text-center text-white mb-0" id="mainHeader">
+    <div class="container">
+      <h1>Bienvenue sur votre carnet de note</h1>
+      <p class="lead">Tel Pascal on y écrit ses pensées...</p>
+    </div>
+  </header>
+  {% include 'nav.html.j2' %}
+  <main class="container">
+    {% block main %}
+    {% endblock %}
+  </main>
+{% endblock %}

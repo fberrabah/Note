@@ -1,0 +1,46 @@
+<!-- <nav class="mb-5 bg-dark text-white py-1">
+  <div class="container d-flex justify-content-between">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{{ url_for('index') }}">Accueil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{{ url_for('thoughts') }}">Admin</a>
+      </li>
+    </ul>
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link text-white" href=""><i class="fas fa-user"></i> {{ current_user.first_name }}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{{ url_for('logout')}}"><i class="fas fa-door-open"></i> Déconnexion</a>
+      </li>
+    </ul>
+  </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg bg-dark text-white py-1 mb-5">
+  <div class="container d-flex justify-content-between">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="text-white"><i class="fas fa-bars"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{{ url_for('index') }}">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{{ url_for('thoughts') }}">Admin</a>
+        </li>
+      </ul>
+    </div>
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link text-white" href=""><i class="fas fa-user"></i> {{ current_user.first_name }}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{{ url_for('logout')}}"><i class="fas fa-door-open"></i><span class="d-none d-sm-inline"> Déconnexion</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
